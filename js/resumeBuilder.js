@@ -167,3 +167,16 @@ $(document).click(function(loc) {
 
 });
 
+// Return work locations
+
+function locationizer(work_obj) {
+    var locationArray = [];
+    for (job in work_obj.jobs){
+        var newLocation = work_obj.jobs[job].location;
+        // console.log(location);
+        locationArray.push(newLocation);
+    }
+    /* console.log(locations); */
+    return locationArray;
+}
+
