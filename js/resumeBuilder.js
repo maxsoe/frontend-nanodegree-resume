@@ -98,10 +98,12 @@ var education =
 }
 
 
+
+
 // If Statements Quiz
 
 if (bio.skills.length > 0) {
-  $("#header").append(HTMLSkillsStart);
+  $("#header").append(HTMLskillsStart);
   var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
   $("#skills").append(formattedSkill);
   
@@ -113,4 +115,24 @@ if (bio.skills.length > 0) {
   
   formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
   $("#skills").append(formattedSkill);  
+}
+
+// For-In Loops Quiz
+
+for (job in work.jobs) {
+/*
+  console.log(work.jobs[job].employer);
+  console.log(work.jobs[job].title);
+*/
+  $("#workExperience").append(HTMLworkStart);
+  
+  var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+  var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+/*
+  $("#workExperience").append(formattedTitle);
+  $("#workExperience").append(formattedEmployer);
+*/
+    
+  var formattedEmployerTitle = formattedEmployer + formattedTitle;
+  $(".work-entry:last").append(formattedEmployerTitle);  
 }
