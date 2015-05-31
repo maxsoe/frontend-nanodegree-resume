@@ -152,3 +152,18 @@ function displayWork() {
 
 displayWork();
 
+// Collecting click locations
+$(document).click(function(loc) { 
+
+  var x = loc.pageX;
+  var y = loc.pageY;
+  
+  logClicks(x,y);
+
+  /*
+  console.log("location x is " +loc.pageX);
+  console.log("location y is " +loc.pageY);
+  */
+
+});
+
