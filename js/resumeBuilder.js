@@ -134,5 +134,16 @@ for (job in work.jobs) {
 */
     
   var formattedEmployerTitle = formattedEmployer + formattedTitle;
-  $(".work-entry:last").append(formattedEmployerTitle);  
+  $(".work-entry:last").append(formattedEmployerTitle);
+  
+  // Work Quiz
+  var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+  $(".work-entry:last").append(formattedLocation);
+  var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+  $(".work-entry:last").append(formattedDates); 
+  var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+  $(".work-entry:last").append(formattedDescription);  
 }
+
+
+
