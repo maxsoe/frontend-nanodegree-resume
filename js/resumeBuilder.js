@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // $("#main").append("Max Soe");
 
 /*
@@ -212,6 +211,3 @@ var education =
     }
   ]
 }
-=======
-
->>>>>>> origin/master
