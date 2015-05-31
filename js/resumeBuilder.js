@@ -46,7 +46,7 @@ var bio =
 {
   "name" : "Lorenzo Von Matterhorn",
   "role" : "Chairman and CEO",
-  "welcomeMessage" : "",
+  "welcomeMessage" : "I am Lorenzo",
   "contacts" : {
     "mobile" : "555-1234-5678",
     "email" : "lorenzo@example.com",
@@ -54,7 +54,7 @@ var bio =
     "twitter" : "@Barney_Fan",
     "location" : "New York City, New York, USA"
   },
-  "skills" : []
+  "skills" : ["Legendary", "Awesome", "High fives"]
 }
 
 var education =
