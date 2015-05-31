@@ -117,33 +117,38 @@ if (bio.skills.length > 0) {
   $("#skills").append(formattedSkill);  
 }
 
-// For-In Loops Quiz
 
-for (job in work.jobs) {
-/*
-  console.log(work.jobs[job].employer);
-  console.log(work.jobs[job].title);
-*/
-  $("#workExperience").append(HTMLworkStart);
+// Unspaghettify(displayWork)
+
+function displayWork() {
+  // For-In Loops Quiz
   
-  var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-  var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-/*
-  $("#workExperience").append(formattedTitle);
-  $("#workExperience").append(formattedEmployer);
-*/
+  for (job in work.jobs) {
+  /*
+    console.log(work.jobs[job].employer);
+    console.log(work.jobs[job].title);
+  */
+    $("#workExperience").append(HTMLworkStart);
     
-  var formattedEmployerTitle = formattedEmployer + formattedTitle;
-  $(".work-entry:last").append(formattedEmployerTitle);
-  
-  // Work Quiz
-  var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-  $(".work-entry:last").append(formattedLocation);
-  var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-  $(".work-entry:last").append(formattedDates); 
-  var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-  $(".work-entry:last").append(formattedDescription);  
+    var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+    var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+  /*
+    $("#workExperience").append(formattedTitle);
+    $("#workExperience").append(formattedEmployer);
+  */
+      
+    var formattedEmployerTitle = formattedEmployer + formattedTitle;
+    $(".work-entry:last").append(formattedEmployerTitle);
+    
+    // Work Quiz
+    var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+    $(".work-entry:last").append(formattedLocation);
+    var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+    $(".work-entry:last").append(formattedDates); 
+    var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+    $(".work-entry:last").append(formattedDescription);  
+  }
 }
 
-
+displayWork();
 
