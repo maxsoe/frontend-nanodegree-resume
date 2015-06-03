@@ -4,14 +4,14 @@ var work =
     {
       "employer" : "employer1",
       "title" : "title1",
-      "location" : "location1",
+      "location" : "New York City, New York, USA",
       "dates" : "dates1",
       "description" : "description1"
     },
     {
       "employer" : "employer2",
       "title" : "title2",
-      "location" : "location2",
+      "location" : "Seattle, Washington, USA",
       "dates" : "dates2",
       "description" : "description2"
     }
@@ -225,3 +225,6 @@ projects.display = function() {
 }
 
 projects.display();
+
+// Add Google Map
+$("#mapDiv").append(googleMap);
