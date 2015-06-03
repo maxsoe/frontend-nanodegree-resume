@@ -217,7 +217,7 @@ projects.display = function() {
    
    if (projects.projects[project].images.length > 0) {
      for (image in projects.projects[project].images) {
-       var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].Image);
+       var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].image);
    $(".project-entry:last").append(formattedImage);
      }
    }
@@ -228,3 +228,5 @@ projects.display();
 
 // Add Google Map
 $("#mapDiv").append(googleMap);
+
+//More visualisations can be found at http://d3js.org/
