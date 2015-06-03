@@ -180,3 +180,23 @@ function locationizer(work_obj) {
     return locationArray;
 }
 
+// Internationalize names
+
+function inName(fullname) {
+  fullname = fullname.trim();
+  var nameArray = fullname.split(" ");
+  var firstName = nameArray[0];
+  var surname = nameArray[1];
+  firstName = firstName.charAt(0).toUpperCase() + firstName.slice(1).toLowerCase();
+  surname = surname.toUpperCase();
+/*
+  console.log(firstName);
+  console.log(surname);
+  console.log(firstName +" " +surname);
+*/
+  return (firstName +" " +surname);
+}
+
+inName("maaslSFSDF SOe");
+
+$('#main').append(internationalizeButton);
