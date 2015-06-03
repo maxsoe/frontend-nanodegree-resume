@@ -197,6 +197,31 @@ function inName(fullname) {
   return (firstName +" " +surname);
 }
 
-inName("maaslSFSDF SOe");
+/* inName("maaslSFSDF SOe"); */
 
 $('#main').append(internationalizeButton);
+
+// Encapsulating Functions
+projects.display = function() {
+ for (project in projects.projects) {
+   $("#projects").append(HTMLprojectStart);
+   
+   var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+   $(".project-entry:last").append(formattedTitle);
+   
+   var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+   $(".project-entry:last").append(formattedDates);
+   
+   var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+   $(".project-entry:last").append(formattedDescription);
+   
+   if (projects.projects[project].images.length > 0) {
+     for (image in projects.projects[project].images) {
+       var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].description);
+   $(".project-entry:last").append(formattedImage);
+     }
+   }
+ }
+}
+
+projects.display();
