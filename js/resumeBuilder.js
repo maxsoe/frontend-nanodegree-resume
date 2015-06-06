@@ -1,23 +1,52 @@
+// Collecting click locations
+$(document).click(function(loc) { 
+  var x = loc.pageX;
+  var y = loc.pageY;
+  logClicks(x,y);
+});
+
+// Work history
 var work = 
 {
-  "jobs" : [
+  "jobs": [
     {
-      "employer" : "employer1",
-      "title" : "title1",
-      "location" : "New York City, New York, USA",
-      "dates" : "dates1",
-      "description" : "description1"
+      "employer": "employer1",
+      "title": "title1",
+      "location": "New York City, New York, USA",
+      "dates": "dates1",
+      "description": "description1"
     },
     {
-      "employer" : "employer2",
-      "title" : "title2",
-      "location" : "Seattle, Washington, USA",
-      "dates" : "dates2",
-      "description" : "description2"
+      "employer": "employer2",
+      "title": "title2",
+      "location": "Seattle, Washington, USA",
+      "dates": "dates2",
+      "description": "description2"
     }
-  ]   
+  ],
+  "display": function displayWork() {
+    for (job in work.jobs) {
+      $("#workExperience").append(HTMLworkStart);
+      
+      var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+      var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+        
+      var formattedEmployerTitle = formattedEmployer + formattedTitle;
+      $(".work-entry:last").append(formattedEmployerTitle);
+      
+      var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+      $(".work-entry:last").append(formattedLocation);
+      var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+      $(".work-entry:last").append(formattedDates); 
+      var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+      $(".work-entry:last").append(formattedDescription);  
+    }
+  }
 }
 
+work.display();
+
+// Projects history
 var projects = 
 {
   "projects" : [
@@ -42,6 +71,7 @@ var projects =
   ]   
 }
 
+// Personal bio JSon
 var bio = 
 {
   "name" : "Lorenzo Von Matterhorn",
@@ -57,6 +87,7 @@ var bio =
   "skills" : ["Legendary", "Awesome", "High fives"]
 }
 
+// Education history
 var education =
 {
   "schools" : [
@@ -116,58 +147,6 @@ if (bio.skills.length > 0) {
   formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
   $("#skills").append(formattedSkill);  
 }
-
-
-// Unspaghettify(displayWork)
-
-function displayWork() {
-  // For-In Loops Quiz
-  
-  for (job in work.jobs) {
-  /*
-    console.log(work.jobs[job].employer);
-    console.log(work.jobs[job].title);
-  */
-    $("#workExperience").append(HTMLworkStart);
-    
-    var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-    var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-  /*
-    $("#workExperience").append(formattedTitle);
-    $("#workExperience").append(formattedEmployer);
-  */
-      
-    var formattedEmployerTitle = formattedEmployer + formattedTitle;
-    $(".work-entry:last").append(formattedEmployerTitle);
-    
-    // Work Quiz
-    var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-    $(".work-entry:last").append(formattedLocation);
-    var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-    $(".work-entry:last").append(formattedDates); 
-    var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-    $(".work-entry:last").append(formattedDescription);  
-  }
-}
-
-displayWork();
-
-// Collecting click locations
-$(document).click(function(loc) { 
-
-  var x = loc.pageX;
-  var y = loc.pageY;
-  
-  logClicks(x,y);
-
-  /*
-  console.log("location x is " +loc.pageX);
-  console.log("location y is " +loc.pageY);
-  */
-
-});
-
-// Return work locations
 
 function locationizer(work_obj) {
     var locationArray = [];
