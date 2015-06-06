@@ -38,13 +38,77 @@ var bio =
            $("#skills").append(formattedSkill);
          }
        }
-       
-       
-    
   }
 }
 
 bio.display();
+
+// Education history
+var education =
+{
+  "schools" : [
+    {
+      "name" : "name1",
+      "location" : "location1",
+      "degree" : "degree1",
+      "majors" : [
+        "major1A", "major1B"
+      ],
+      "dates" : "dates1",
+      "url" : "url1"
+    },
+    {
+      "name" : "name2",
+      "location" : "location2",
+      "degree" : "degree2",
+      "majors" : [
+        "major2A", "major2B"
+      ],
+      "dates" : "dates2",
+      "url" : "url2"
+    }
+  ],
+  "onlineCourses" : [
+    {
+      "title" : "title1",
+      "school" : "school1",
+      "dates" : "dates1",
+      "url" : "url1"
+    },
+    {
+      "title" : "title2",
+      "school" : "school2",
+      "dates" : "dates2",
+      "url" : "url2"
+    }
+  ],
+  "display": function displayEducation()
+  {
+    for (school in education.schools) {
+      $("#education").append(HTMLschoolStart);
+      
+      var formattedschoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
+      var formattedschoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+        
+      var formattedNameDegree = formattedschoolName + formattedschoolDegree;
+      $(".education-entry:last").append(formattedNameDegree);
+      
+      var formattedschoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+      $(".education-entry:last").append(formattedschoolDates);
+      
+      var formattedschoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+      $(".education-entry:last").append(formattedschoolLocation);
+      
+      if (education.schools[school].majors.length > 0) {         
+        for (major in education.schools[school].majors) {
+          var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors[major]);
+          $(".education-entry:last").append(formattedMajor);
+        }
+      }
+    }
+  }
+}
+education.display();
 
 // Work history
 var work = 
@@ -115,46 +179,7 @@ var projects =
 
 
 
-// Education history
-var education =
-{
-  "schools" : [
-    {
-      "name" : "name1",
-      "location" : "location1",
-      "degree" : "degree1",
-      "majors" : [
-        "majors1A", "majors1B"
-      ],
-      "dates" : "dates1",
-      "url" : "url1"
-    },
-    {
-      "name" : "name2",
-      "location" : "location2",
-      "degree" : "degree2",
-      "majors" : [
-        "majors2A", "majors2B"
-      ],
-      "dates" : "dates2",
-      "url" : "url2"
-    }
-  ],
-  "onlineCourses" : [
-    {
-      "title" : "title1",
-      "school" : "school1",
-      "dates" : "dates1",
-      "url" : "url1"
-    },
-    {
-      "title" : "title2",
-      "school" : "school2",
-      "dates" : "dates2",
-      "url" : "url2"
-    }
-  ]
-}
+
 
 
 
