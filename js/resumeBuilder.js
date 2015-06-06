@@ -5,6 +5,47 @@ $(document).click(function(loc) {
   logClicks(x,y);
 });
 
+// Personal bio JSon
+var bio = 
+{
+  "name": "Lorenzo Von Matterhorn",
+  "role": "Chairman and CEO",
+  "contacts": {
+    "mobile": "555-1234-5678",
+    "email": "lorenzo@example.com",
+    "github": "",
+    "twitter": "@Barney_Fan",
+    "location": "New York City, New York, USA"
+  },
+  "welcomeMessage": "Bite my shiney metal ass",
+  "skills": ["Legendary", "Awesome", "High fives"],
+  "biopic": "images/bender.jpg",
+  "display": function displayBio() 
+  {
+       formattedName = HTMLheaderName.replace("%data%", bio.name);
+       $("#header").append(formattedName);
+       formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+       $("#header").append(formattedRole);
+       formattedbioPic = HTMLbioPic.replace("%data%", bio.biopic);
+       $("#header").append(formattedbioPic);
+       formattedwelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+       $("#header").append(formattedwelcomeMsg);
+       
+       if (bio.skills.length > 0) {
+         $("#header").append(HTMLskillsStart);
+         for (skill in bio.skills) {
+           var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
+           $("#skills").append(formattedSkill);
+         }
+       }
+       
+       
+    
+  }
+}
+
+bio.display();
+
 // Work history
 var work = 
 {
@@ -24,7 +65,8 @@ var work =
       "description": "description2"
     }
   ],
-  "display": function displayWork() {
+  "display": function displayWork() 
+  {
     for (job in work.jobs) {
       $("#workExperience").append(HTMLworkStart);
       
@@ -44,7 +86,7 @@ var work =
   }
 }
 
-work.display();
+work.display(); // display work history in HTML file
 
 // Projects history
 var projects = 
@@ -71,21 +113,7 @@ var projects =
   ]   
 }
 
-// Personal bio JSon
-var bio = 
-{
-  "name" : "Lorenzo Von Matterhorn",
-  "role" : "Chairman and CEO",
-  "welcomeMessage" : "I am Lorenzo",
-  "contacts" : {
-    "mobile" : "555-1234-5678",
-    "email" : "lorenzo@example.com",
-    "github" : "",
-    "twitter" : "@Barney_Fan",
-    "location" : "New York City, New York, USA"
-  },
-  "skills" : ["Legendary", "Awesome", "High fives"]
-}
+
 
 // Education history
 var education =
@@ -133,6 +161,7 @@ var education =
 
 // If Statements Quiz
 
+/*
 if (bio.skills.length > 0) {
   $("#header").append(HTMLskillsStart);
   var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
@@ -147,6 +176,7 @@ if (bio.skills.length > 0) {
   formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
   $("#skills").append(formattedSkill);  
 }
+*/
 
 function locationizer(work_obj) {
     var locationArray = [];
