@@ -153,20 +153,18 @@ var work =
       
       var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
       var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-        
       var formattedEmployerTitle = formattedEmployer + formattedTitle;
       $(".work-entry:last").append(formattedEmployerTitle);
       
-      var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-      $(".work-entry:last").append(formattedLocation);
       var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
       $(".work-entry:last").append(formattedDates); 
+      var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+      $(".work-entry:last").append(formattedLocation);
       var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
       $(".work-entry:last").append(formattedDescription);  
     }
   }
 }
-
 work.display(); // display work history in HTML file
 
 // Projects history
@@ -191,9 +189,31 @@ var projects =
         "imageURL2B"
       ]
     }
-  ]   
+  ],
+  "display": function () {
+    for (project in projects.projects) {
+     $("#projects").append(HTMLprojectStart);
+     
+     var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+     $(".project-entry:last").append(formattedTitle);
+     
+     var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+     $(".project-entry:last").append(formattedDates);
+     
+     var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+     $(".project-entry:last").append(formattedDescription);
+     
+     if (projects.projects[project].images.length > 0) {
+       for (image in projects.projects[project].images) {
+         var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].image);
+     $(".project-entry:last").append(formattedImage);
+       }
+     }
+    }
+  }   
 }
 
+projects.display();
 
 
 
@@ -252,6 +272,7 @@ function inName(fullname) {
 
 $('#main').append(internationalizeButton);
 
+/*
 // Encapsulating Functions
 projects.display = function() {
  for (project in projects.projects) {
@@ -276,6 +297,7 @@ projects.display = function() {
 }
 
 projects.display();
+*/
 
 // Add Google Map
 $("#mapDiv").append(googleMap);
