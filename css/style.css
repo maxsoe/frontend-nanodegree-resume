@@ -29,8 +29,7 @@ h2 {
 }
 
 h3 {
-  font-style: italic;
-  font-size: 20px;
+  font-size: 18px;
   color: #000000;
   line-height: 22px;
 }
@@ -129,10 +128,7 @@ a {
 }
 
 .center-content {
-  padding-top: 2.5%;
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-bottom: 2.5%
+  padding: 2.5% 5%;
 }
 
 ul {
@@ -148,6 +144,7 @@ ul {
 
 img {
   padding: 10px;
+  width: calc(100vw - 10% - 20px);
 }
 
 /* Bar chart stuff */
@@ -215,13 +212,15 @@ span {
 }
 
 /* Custom CSS Styles */
+.header-role {
+  color: #FFFFFF;
+}
 
 .welcome-message {
-  border-left: 10px solid #ccc;
-  margin: 1.5em 10px;
   padding: 0.5em 10px;
   quotes: "\201C""\201D""\2018""\2019";
 }
+
 .welcome-message:before {
   color: #ccc;
   content: open-quote;
@@ -230,6 +229,43 @@ span {
   margin-right: 0.25em;
   vertical-align: -0.4em;
 }
+
+.welcome-message:after {
+  color: #ccc;
+  content: close-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
 .welcome-message p {
   display: inline;
+}
+
+#header .contacts.flex-box {
+    justify-content: space-between;
+}
+
+#skills {
+    justify-content: space-between;
+}
+
+@media screen and (min-width: 750px) {
+    #skills .flex-item {
+        width: 100%;
+    }
+    
+    img {
+      width: calc(50vw - 20px - 6%);
+    }
+}
+
+#education h3 {
+  color: #999;
+  padding-top: 30px;
+}
+
+#letsConnect h2 {
+  color: #000;
 }
