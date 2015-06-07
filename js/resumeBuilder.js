@@ -162,7 +162,7 @@ var projects = {
     "images": ["images/projects1a.jpg", "images/projects1b.png"]
   }, {
     "title": "Superking",
-    "dates": "dates2",
+    "dates": "3011",
     "description": "Bender joins the New Justice Team as the superhero Superking, with a cape, a mask and a royal crown. Superking is a bit of a rogue (or an anti-hero), and while he fights crime with the team, he has been known to abuse his powers for his own gain.",
     "images": ["images/projects2a.jpg", "images/projects2b.png"]
   }],
