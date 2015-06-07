@@ -20,15 +20,15 @@ var bio = {
   "skills": ["Bending", "Stealing", "Speaking French"],
   "biopic": "images/bender.jpg",
   "display": function() {
-    formattedName = HTMLheaderName.replace("%data%", bio.name);
-    formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-    formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-    formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-    formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-    formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-    formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-    formattedbioPic = HTMLbioPic.replace("%data%", bio.biopic);
-    formattedwelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+    var formattedName = HTMLheaderName.replace("%data%", bio.name);
+    var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+    var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+    var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+    var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+    var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+    var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+    var formattedbioPic = HTMLbioPic.replace("%data%", bio.biopic);
+    var formattedwelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
     
     $("#header").append(formattedName);
     $("#header").append(formattedRole);
