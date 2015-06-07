@@ -268,3 +268,8 @@ span {
 #letsConnect h2 {
   color: #000;
 }
+
+.online-url {
+  font-style: italic;
+  margin: 0;
+}
