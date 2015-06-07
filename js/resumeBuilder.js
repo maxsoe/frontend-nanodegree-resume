@@ -61,25 +61,25 @@ var education = {
     "degree": "Bending",
     "majors": ["Bending", "Robo-American Studies"],
     "dates": "2996",
-    "url": "bendingcollege@futurama.com"
+    "url": "http://www.bendingcollege.futurama.com"
   }, {
     "name": "Mars University",
     "location": "Sydney, NSW, Australia",
     "degree": "Dropout",
     "majors": ["Dropout 101", "Dropout 201"],
     "dates": "2999",
-    "url": "marsuniversity@futurama.com"
+    "url": "http://www.marsuniversity.futurama.com"
   }],
   "onlineCourses": [{
     "title": "The Dirty Double Cross",
     "school": "Swindling Online School",
     "dates": "3000",
-    "url": "screwyou@futurama.com"
+    "url": "http://www.screwyou.futurama.com"
   }, {
     "title": "How to kill all humans, expect one",
     "school": "Mom's Robot School",
     "dates": "3000",
-    "url": "momsrobotschool@futurama.com"
+    "url": "http://www.momsrobotschool.futurama.com"
   }],
   "display": function() {
     for (school in education.schools) {
