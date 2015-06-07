@@ -8,17 +8,17 @@ $(document).click(function(loc) {
 // Personal bio
 var bio = 
 {
-  "name": "Lorenzo Von Matterhorn",
-  "role": "Chairman and CEO",
+  "name": "Bender Bending Rodriguez",
+  "role": "Bending extrodinaire",
   "contacts": {
     "mobile": "555-1234-5678",
-    "email": "lorenzo@example.com",
-    "github": "bendingrodriguez",
-    "twitter": "@Barney_Fan",
+    "email": "bender@ilovebender.com",
+    "github": "bender",
+    "twitter": "@bender",
     "location": "New York City, New York, USA"
   },
   "welcomeMessage": "Bite my shiney metal ass",
-  "skills": ["Legendary", "Awesome", "High fives"],
+  "skills": ["Bending", "Stealing", "Speaking French"],
   "biopic": "images/bender.jpg",
   "display": function displayBio() 
   {
@@ -65,38 +65,38 @@ var education =
 {
   "schools" : [
     {
-      "name" : "name1",
-      "location" : "location1",
-      "degree" : "degree1",
+      "name" : "Bending College",
+      "location" : "Salt Lake City, Utah, USA",
+      "degree" : "Bending",
       "majors" : [
-        "major1A", "major1B"
+        "Bending", "Robo-American Studies"
       ],
-      "dates" : "dates1",
-      "url" : "url1"
+      "dates" : "2996",
+      "url" : "bendingcollege@futurama.com"
     },
     {
-      "name" : "name2",
-      "location" : "location2",
-      "degree" : "degree2",
+      "name" : "Mars University",
+      "location" : "Sydney, NSW, Australia",
+      "degree" : "Dropout",
       "majors" : [
-        "major2A", "major2B"
+        "Dropout 101", "Dropout 201"
       ],
-      "dates" : "dates2",
-      "url" : "url2"
+      "dates" : "2999",
+      "url" : "marsuniversity@futurama.com"
     }
   ],
   "onlineCourses" : [
     {
-      "title" : "title1",
-      "school" : "school1",
-      "dates" : "online dates1",
-      "url" : "url1"
+      "title" : "The Dirty Double Cross",
+      "school" : "Swindling Online School",
+      "dates" : "3000",
+      "url" : "screwyou@futurama.com"
     },
     {
-      "title" : "title2",
-      "school" : "school2",
-      "dates" : "online dates2",
-      "url" : "url2"
+      "title" : "How to kill all humans, expect one",
+      "school" : "Mom's Robot School",
+      "dates" : "3000",
+      "url" : "momsrobotschool@futurama.com"
     }
   ],
   "display": function displayEducation()
@@ -149,18 +149,18 @@ var work =
 {
   "jobs": [
     {
-      "employer": "employer1",
-      "title": "title1",
+      "employer": "Plant Express",
+      "title": "Head of Security",
       "location": "New York City, New York, USA",
-      "dates": "dates1",
-      "description": "description1"
+      "dates": "2999",
+      "description": "Planet Express, Inc. is an intergalactic delivery company owned by Professor Farnsworth to fund his research. Founded in 2961, primary location is located in New New York, and its crew includes many important characters of the series. The current crew reached their 100th delivery in September 3010, and to celebrate, Bender threw a 100th-delivery party. The inaugural delivery crew, which disappeared on its first interplanetary mission, was found alive in August 3011."
     },
     {
-      "employer": "employer2",
-      "title": "title2",
+      "employer": "Army of the Damned",
+      "title": "Commander of the Army of the Damned",
       "location": "Seattle, Washington, USA",
-      "dates": "dates2",
-      "description": "description2"
+      "dates": "3010",
+      "description": "The Army of the Damned was an army given to Bender by the Robot Devil in return for Bender's firstborn son. It is an army of thousands of robots who came from Robot Hell in order to overthrow humanity, led by Bender. However, when they went to do this, all of the humans and other species left to live on Yivo, making the invasion of Earth useless. Bender took his army to get them back in a Pirate Ship."
     }
   ],
   "display": function displayWork() 
@@ -189,21 +189,21 @@ var projects =
 {
   "projects" : [
     {
-      "title" : "title1",
-      "dates" : "dates1",
-      "description" : "description1",
+      "title" : "Ruler of Earth",
+      "dates" : "3028",
+      "description" : "After Nixon's fourth term in office began, things went downhill for the Earthican population to the point when robots began doing all the tedious labor and consequently, they began a rebellion led by me, Bender. At some point between 3014 and 3028, I became ruler of Earth and started killing humans, thus fulfilling my life-long desire.",
       "images" : [
-        "imageURL1A",
-        "imageURL1B"
+        "images/projects1a.jpg",
+        "images/projects1b.png"
       ]
     },
     {
-      "title" : "title2",
+      "title" : "Superking",
       "dates" : "dates2",
-      "description" : "description2",
+      "description" : "Bender joins the New Justice Team as the superhero Superking, with a cape, a mask and a royal crown. Superking is a bit of a rogue (or an anti-hero), and while he fights crime with the team, he has been known to abuse his powers for his own gain.",
       "images" : [
-        "imageURL2A",
-        "imageURL2B"
+        "images/projects2a.jpg",
+        "images/projects2b.png"
       ]
     }
   ],
@@ -222,7 +222,8 @@ var projects =
      
      if (projects.projects[project].images.length > 0) {
        for (image in projects.projects[project].images) {
-         var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].image);
+         var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+         console.log("formattedImage is " +formattedImage);
      $(".project-entry:last").append(formattedImage);
        }
      }
