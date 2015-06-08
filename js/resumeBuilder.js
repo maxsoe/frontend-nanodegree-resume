@@ -44,7 +44,7 @@ var bio = {
     
     if (bio.skills.length > 0) {
       $("#header").append(HTMLskillsStart);
-      for (skill in bio.skills) {
+      for (var skill in bio.skills) {
         var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
         $("#skills").append(formattedSkill);
       }
@@ -82,7 +82,7 @@ var education = {
     "url": "http://www.momsrobotschool.futurama.com"
   }],
   "display": function() {
-    for (school in education.schools) {
+    for (var school in education.schools) {
       var formattedschoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
       var formattedschoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
       var formattedNameDegree = formattedschoolName + formattedschoolDegree;
@@ -95,7 +95,7 @@ var education = {
       $(".education-entry:last").append(formattedschoolLocation);
       
       if (education.schools[school].majors.length > 0) {
-        for (major in education.schools[school].majors) {
+        for (var major in education.schools[school].majors) {
           var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors[major]);
           $(".education-entry:last").append(formattedMajor);
         }
@@ -103,7 +103,7 @@ var education = {
     }
     
     $("#education").append(HTMLonlineClasses);
-    for (course in education.onlineCourses) {
+    for (var course in education.onlineCourses) {
       var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
       var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
       var formattedTitleSchool = formattedOnlineTitle + formattedOnlineSchool;
@@ -126,16 +126,16 @@ var work = {
     "title": "Head of Security",
     "location": "New York City, New York, USA",
     "dates": "2999",
-    "description": "Planet Express, Inc. is an intergalactic delivery company owned by Professor Farnsworth to fund his research. Founded in 2961, primary location is located in New New York, and its crew includes many important characters of the series. The current crew reached their 100th delivery in September 3010, and to celebrate, Bender threw a 100th-delivery party. The inaugural delivery crew, which disappeared on its first interplanetary mission, was found alive in August 3011."
+    "description": "Planet Express, Inc. is an intergalactic delivery company owned by Professor Farnsworth to fund his research. Founded in 2961, primary location is located in New New York, and its crew includes many important characters of the series. The current crew reached their 100th delivery in September 3010, and to celebrate, a 100th-delivery party by me, Bender. The inaugural delivery crew, which disappeared on its first interplanetary mission, was found alive in August 3011."
   }, {
     "employer": "Army of the Damned",
     "title": "Commander of the Army of the Damned",
     "location": "Seattle, Washington, USA",
     "dates": "3010",
-    "description": "The Army of the Damned was an army given to Bender by the Robot Devil in return for Bender's firstborn son. It is an army of thousands of robots who came from Robot Hell in order to overthrow humanity, led by Bender. However, when they went to do this, all of the humans and other species left to live on Yivo, making the invasion of Earth useless. Bender took his army to get them back in a Pirate Ship."
+    "description": "The Army of the Damned was an army given to me, Bender by the Robot Devil in return for my firstborn son. It is an army of thousands of robots who came from Robot Hell in order to overthrow humanity, led by me, Bender. However, when they went to do this, all of the humans and other species left to live on Yivo, making the invasion of Earth useless. In a pirate ship, I took my army to get them back."
   }],
   "display": function() {
-    for (job in work.jobs) {
+    for (var job in work.jobs) {
       var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
       var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
       var formattedEmployerTitle = formattedEmployer + formattedTitle;
@@ -163,11 +163,11 @@ var projects = {
   }, {
     "title": "Superking",
     "dates": "3011",
-    "description": "Bender joins the New Justice Team as the superhero Superking, with a cape, a mask and a royal crown. Superking is a bit of a rogue (or an anti-hero), and while he fights crime with the team, he has been known to abuse his powers for his own gain.",
+    "description": "I joined the New Justice Team as the superhero Superking, with a cape, a mask and a royal crown. Superking is a bit of a rogue (or an anti-hero), and while he fights crime with the team, he has been known to abuse his powers for his own gain.",
     "images": ["images/projects2a.jpg", "images/projects2b.png"]
   }],
   "display": function() {
-    for (project in projects.projects) {
+    for (var project in projects.projects) {
       var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
       var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
       var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
@@ -178,7 +178,7 @@ var projects = {
       $(".project-entry:last").append(formattedDescription);
       
       if (projects.projects[project].images.length > 0) {
-        for (image in projects.projects[project].images) {
+        for (var image in projects.projects[project].images) {
           var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
           $(".project-entry:last").append(formattedImage);
         }
